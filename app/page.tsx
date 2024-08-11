@@ -10,14 +10,18 @@ import ToastCode from "@/components/codes/ToastCode";
 import { PositionKey } from "@/lib/types";
 export default function Home() {
   const [component, setComponent] = useState<string>("button");
-  const [variant, setVariant] = useState<string>("default");
+  const [variant, setVariant] = useState<
+    "secondary" | "default" | "link" | "ghost" | "outline" | "destructive"
+  >("default");
   const [text, setText] = useState<string>("Button");
   const [loading, setLoading] = useState<boolean>(false);
   const [borderRadiusVal, setBorderRadiusVal] = useState<number>(4);
-  const [size, setSize] = useState<string>("default");
+  const [size, setSize] = useState<"default" | "lg" | "sm">("default");
   const [title, setTitle] = useState<string>("");
   const [position, setPosition] = useState<PositionKey>("bottomRight");
-  const [toastType, setToastType] = useState<string>("default");
+  const [toastType, setToastType] = useState<"default" | "destructive">(
+    "default",
+  );
   const [isTitle, setIsTitle] = useState<boolean>(false);
   const [isAction, setIsAction] = useState<boolean>(false);
   const [actionTitle, setActionTitle] = useState<string>("Undo");

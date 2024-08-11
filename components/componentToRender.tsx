@@ -10,13 +10,19 @@ interface ComponentProps {
   buttonFields: {
     loading: boolean;
     borderRadiusVal: number;
-    variant: string;
-    size: string;
+    variant:
+      | "secondary"
+      | "default"
+      | "link"
+      | "ghost"
+      | "outline"
+      | "destructive";
+    size: "default" | "lg" | "sm";
     text: string;
   };
   component: string;
   toastFields: {
-    toastType: string;
+    toastType: "default" | "destructive";
     position: PositionKey;
     title: string;
     toastDescription: string;
@@ -24,7 +30,6 @@ interface ComponentProps {
     actionTitle: string;
   };
 }
-
 export default function ComponentToRender({
   buttonFields,
   component,

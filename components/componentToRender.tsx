@@ -5,7 +5,6 @@ import { ToastAction } from "@/components/ui/toast";
 import { useToast } from "@/components/ui/use-toast";
 import { positions } from "@/lib/positions";
 import { PositionKey } from "@/lib/types";
-type PositionKey = keyof typeof positions;
 
 interface ComponentProps {
   buttonFields: {

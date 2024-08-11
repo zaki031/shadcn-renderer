@@ -8,6 +8,7 @@ import Code from "@/components/codes/code";
 import ButtonCode from "@/components/codes/ButtonCode";
 import ToastCode from "@/components/codes/ToastCode";
 import { PositionKey } from "@/lib/types";
+
 export default function Home() {
   const [component, setComponent] = useState<string>("button");
   const [variant, setVariant] = useState<
@@ -64,7 +65,7 @@ export default function Home() {
   return (
     <main className="min-h-screen  p-8">
       <div className="flex gap-x-10 ">
-        <div className="flex flex-2.5 border-2 border-black rounded-lg flex-col gap-8   p-12">
+        <div className="flex flex-2.5 border-2 border-black rounded-lg flex-col gap-8   py-8 px-16">
           <h2 className=" font-semibold -ml-4 text-2xl">Options :</h2>
           <div className="flex flex-col gap-6">
             <div className="grid w-full max-w-sm items-center gap-1.5">

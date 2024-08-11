@@ -4,12 +4,38 @@ import { Button } from "@/components/ui/button";
 import { ToastAction } from "@/components/ui/toast";
 import { useToast } from "@/components/ui/use-toast";
 import { positions } from "@/lib/positions";
+type PositionKey = keyof typeof positions;
+
+interface ComponentProps {
+  buttonFields: {
+    loading: boolean;
+    borderRadiusVal: number;
+    variant:
+      | "secondary"
+      | "default"
+      | "link"
+      | "ghost"
+      | "outline"
+      | "destructive";
+    size: "default" | "lg" | "sm";
+    text: string;
+  };
+  component: "button" | "toast";
+  toastFields: {
+    toastType: "default" | "destructive";
+    position: PositionKey;
+    title: string;
+    toastDescription: string;
+    isAction: boolean;
+    actionTitle: string;
+  };
+}
+
 export default function ComponentToRender({
   buttonFields,
   component,
-  toastFuncs,
   toastFields,
-}: any) {
+}: ComponentProps) {
   const { toast } = useToast();
 
   if (!component) {
@@ -32,7 +58,6 @@ export default function ComponentToRender({
       </Button>
     );
   } else if (component == "toast") {
-    console.log("meow");
     return (
       <>
         <Button
@@ -47,7 +72,7 @@ export default function ComponentToRender({
                 <ToastAction altText="Goto schedule to undo">
                   {toastFields.actionTitle}
                 </ToastAction>
-              ) : null,
+              ) : undefined,
             });
           }}
         >

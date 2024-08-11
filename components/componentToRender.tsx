@@ -20,7 +20,7 @@ interface ComponentProps {
     size: "default" | "lg" | "sm";
     text: string;
   };
-  component: "button" | "toast";
+  component: string;
   toastFields: {
     toastType: "default" | "destructive";
     position: PositionKey;

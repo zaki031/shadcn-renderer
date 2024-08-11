@@ -10,9 +10,10 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+
 export default function ButtonForm({ buttonFields, buttonFuncs }: any) {
   function isLoading() {
-    buttonFuncs.setLoading((prevLoading) => !prevLoading);
+    buttonFuncs.setLoading((prevLoading: boolean) => !prevLoading);
   }
   return (
     <div className="flex flex-col gap-6">

@@ -7,22 +7,24 @@ import EditingForm from "@/components/forms/editingForm";
 import Code from "@/components/codes/code";
 import ButtonCode from "@/components/codes/ButtonCode";
 import ToastCode from "@/components/codes/ToastCode";
+import { PositionKey } from "@/lib/types";
 export default function Home() {
-  const [component, setComponent] = useState("button");
-  const [variant, setVariant] = useState("default");
-  const [text, setText] = useState("Button");
-  const [loading, setLoading] = useState(false);
-  const [borderRadiusVal, setBorderRadiusVal] = useState(4);
-  const [size, setSize] = useState("default");
-  const [title, setTitle] = useState("");
-  const [position, setPosition] = useState("bottomRight");
-  const [toastType, setToastType] = useState("default");
-  const [isTitle, setIsTitle] = useState(false);
-  const [isAction, setIsAction] = useState(false);
-  const [actionTitle, setActionTitle] = useState("Undo");
-  const [toastDescription, setToastDescription] = useState(
+  const [component, setComponent] = useState<string>("button");
+  const [variant, setVariant] = useState<string>("default");
+  const [text, setText] = useState<string>("Button");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [borderRadiusVal, setBorderRadiusVal] = useState<number>(4);
+  const [size, setSize] = useState<string>("default");
+  const [title, setTitle] = useState<string>("");
+  const [position, setPosition] = useState<PositionKey>("bottomRight");
+  const [toastType, setToastType] = useState<string>("default");
+  const [isTitle, setIsTitle] = useState<boolean>(false);
+  const [isAction, setIsAction] = useState<boolean>(false);
+  const [actionTitle, setActionTitle] = useState<string>("Undo");
+  const [toastDescription, setToastDescription] = useState<string>(
     "Hello, I am a toast message!",
   );
+
   let buttonFields = {
     variant,
     text,

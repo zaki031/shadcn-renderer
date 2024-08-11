@@ -4,25 +4,20 @@ import { Button } from "@/components/ui/button";
 import { ToastAction } from "@/components/ui/toast";
 import { useToast } from "@/components/ui/use-toast";
 import { positions } from "@/lib/positions";
+import { PositionKey } from "@/lib/types";
 type PositionKey = keyof typeof positions;
 
 interface ComponentProps {
   buttonFields: {
     loading: boolean;
     borderRadiusVal: number;
-    variant:
-      | "secondary"
-      | "default"
-      | "link"
-      | "ghost"
-      | "outline"
-      | "destructive";
-    size: "default" | "lg" | "sm";
+    variant: string;
+    size: string;
     text: string;
   };
   component: string;
   toastFields: {
-    toastType: "default" | "destructive";
+    toastType: string;
     position: PositionKey;
     title: string;
     toastDescription: string;
